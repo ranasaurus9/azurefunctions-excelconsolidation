@@ -6,7 +6,7 @@
           "name": "inputblob",
           "type": "blobTrigger",
           "direction": "in",
-          "path": "rawfile/{name}",
+          "path": "blob_container_name/{name}",
           "connection":""
         }
   ]

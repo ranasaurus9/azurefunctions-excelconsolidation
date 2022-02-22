@@ -4,7 +4,7 @@
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "driver":"{ODBC Driver 17 for SQL Server}",
-    "server":"tcp:capacityplanningserver.database.windows.net,1433",
-    "database":"Capacity DB"
+    "server":"tcp:azureserver.database.windows.net,1433",
+    "database":"SQL DB"
   }
 }

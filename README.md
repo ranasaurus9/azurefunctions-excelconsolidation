@@ -1,6 +1,6 @@
 # Azure function to consolidate multiple excel files
 
-This repo contains code and structure of a azure blob trigger python function that consolidates excel files uploaded to a sharepoint folder/blob storage and stores the data to a Azure SQL Database. 
+This repo contains code and structure of a azure blob trigger python function that consolidates excel files uploaded to a sharepoint folder/blob storage and uploads the data to a Azure SQL Database. 
 
 It uses a Azure Blob trigger (https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob-trigger?tabs=python)
 

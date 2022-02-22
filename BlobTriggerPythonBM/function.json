@@ -1,0 +1,13 @@
+{
+  "scriptFile": "__init__.py",
+  "disabled": false,
+  "bindings": [
+      {
+          "name": "inputblob",
+          "type": "blobTrigger",
+          "direction": "in",
+          "path": "rawfile/{name}",
+          "connection":""
+        }
+  ]
+}

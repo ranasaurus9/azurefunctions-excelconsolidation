@@ -11,7 +11,7 @@ from os.path import isfile, join
 import pyodbc
 
 
-def consolidation_function(args):
+def consolidation_function(workbook_name):
     #some code that consolidates worksheet data into a dataframe
     return dataframe
     logging.info("consolidation complete")
@@ -19,7 +19,7 @@ def consolidation_function(args):
 async def main(inputblob: func.InputStream):
     logging.info(f"Python blob trigger function processed blob \n"
                  f"Name: {inputblob.name}\n")
-    s1 = xlrd.open_workbook(file_contents=inputblob.read())
+    workbook_name = xlrd.open_workbook(file_contents=inputblob.read())
 
     # connection to SQL DB
     server = 'tcp:azureserver.database.windows.net,1433'
@@ -34,7 +34,7 @@ async def main(inputblob: func.InputStream):
 
             header = ["A", "B", "C", "D"]
             rsheet = pd.DataFrame(columns=header)
-            df = consolidation_function(args)
+            df = consolidation_function(workbook_name)
             df.columns = header
             cursor.fast_executemany = True
             sql_statement = "INSERT INTO Overview_template (A,B,C,D) VALUES (?,?,?,?)"

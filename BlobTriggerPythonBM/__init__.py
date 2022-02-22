@@ -37,6 +37,6 @@ async def main(inputblob: func.InputStream):
             df = consolidation_function(workbook_name)
             df.columns = header
             cursor.fast_executemany = True
-            sql_statement = "INSERT INTO Overview_template (A,B,C,D) VALUES (?,?,?,?)"
+            sql_statement = "INSERT INTO sql_table (A,B,C,D) VALUES (?,?,?,?)"
             cursor.execute(sql_statement)
             logging.info("file uploaded complete")
